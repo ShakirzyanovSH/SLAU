@@ -14,7 +14,7 @@ void Gauss(double x[3], double e[3], double A[3][4])
 	double A1[3][4];
 	for(i=0;i<n;i++) for(j=0;j<=n;j++) A1[i][j] = A[i][j];
 	
-// проход в прямую сторону	
+// РїСЂРѕС…РѕРґ РІ РїСЂСЏРјСѓСЋ СЃС‚РѕСЂРЅСѓ	
 	for(i=0;i<n;i++)
 	{
 		for(j=i;j<n;j++)
@@ -31,7 +31,7 @@ void Gauss(double x[3], double e[3], double A[3][4])
 			}
 		}
 	}
-// проход в обратную сторону
+// РїСЂРѕС…РѕРґ РІ РѕР±СЂР°С‚РЅСѓСЋ СЃС‚РѕСЂРѕРЅСѓ
 	x[n-1] = A1[n-1][n];
 	for(i=n-2;i>=0;i--)
 	{
@@ -50,7 +50,7 @@ void Iteration(double x[3], double e[3], double A[3][4], double eIt)
 	double xs[3];
 	for(i=0;i<n;i++) for(j=0;j<=n;j++) A1[i][j] = A[i][j];
 
-// начальное приближение
+// РЅР°С‡Р°Р»СЊРЅРѕРµ РїСЂРёР±Р»РёР¶РµРЅРёРµ
 	for(i=0;i<n;i++) x[i] = 0;
 
 	do
@@ -86,7 +86,7 @@ void Zeidel(double x[3], double e[3], double A[3][4], double eIt)
 	double xs[3], xprev[3];
 	for(i=0;i<n;i++) for(j=0;j<=n;j++) A1[i][j] = A[i][j];
 
-// начальное приближение
+// РЅР°С‡Р°Р»СЊРЅРѕРµ РїСЂРёР±Р»РёР¶РµРЅРёРµ
 	for(i=0;i<n;i++) x[i] = 0;
 	do
 	{
@@ -116,7 +116,7 @@ void Zeidel(double x[3], double e[3], double A[3][4], double eIt)
 }
 
 
-// проверка правильности решения
+// РїСЂРѕРІРµСЂРєР° РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё СЂРµС€РµРЅРёСЏ
 void RightSolve(double x[3], double e[3], double A[3][4])
 {
 	double t;	
@@ -125,7 +125,7 @@ void RightSolve(double x[3], double e[3], double A[3][4])
 	{
 		t = 0;
 		for(j=0;j<n;j++) t += x[j]*A[i][j];
-// находим невязку		
+// РЅР°С…РѕРґРёРј РЅРµРІСЏР·РєСѓ			
 		e[i] = A[i][n] - t;
 	}
 }
